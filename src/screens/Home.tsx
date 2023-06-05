@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import {StyleSheet, Text, View } from 'react-native';
 import React from "react";
-import Topbar from "../components/Topbar";
+import HomeTopbar from "../components/HomeTopbar";
+import Highlights from "../components/Highlights";
 
-export default function Home() {
+const Home: React.FC = () => {
     return (
         <View style={styles.container}>
-            <Topbar title={'UniHub'}/>
-            <Text>Home</Text>
+            <HomeTopbar />
+            <Highlights />
             <StatusBar style="auto" />
         </View>
     );
@@ -21,3 +22,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+
+export default Home;

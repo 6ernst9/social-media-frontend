@@ -1,7 +1,6 @@
 import {StyleSheet } from 'react-native';
 import React from "react";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import Navbar from "./components/Navbar";
+import Navbar from "./src/components/Navbar";
 
 export default function App() {
   return (

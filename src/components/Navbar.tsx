@@ -8,19 +8,19 @@ import Account from "../screens/Account";
 import Notifications from "../screens/Notifications";
 import {NavigationContainer} from "@react-navigation/native";
 
-import HouseFocusedIcon from '../assets/houseFill.svg';
-import HouseIcon from '../assets/house.svg';
+import HouseFocusedIcon from '../assets/icons/houseFill.svg';
+import HouseIcon from '../assets/icons/house.svg';
 
-import SearchIcon from '../assets/search.svg';
+import SearchIcon from '../assets/icons/search.svg';
 
-import PublishFocusedIcon from '../assets/plusFill.svg';
-import PublishIcon from '../assets/plus.svg';
+import PublishFocusedIcon from '../assets/icons/plusFill.svg';
+import PublishIcon from '../assets/icons/plus.svg';
 
-import NotificationsFocusedIcon from '../assets/heartFill.svg';
-import NotificationsIcon from '../assets/heart.svg';
+import NotificationsFocusedIcon from '../assets/icons/heartFill.svg';
+import NotificationsIcon from '../assets/icons/heart.svg';
 
-import AccountFocusedIcon from '../assets/userFill.svg';
-import AccountIcon from '../assets/user.svg';
+import AccountFocusedIcon from '../assets/icons/userFill.svg';
+import AccountIcon from '../assets/icons/user.svg';
 
 import {routes} from '../utils/constants';
 
@@ -28,7 +28,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
     return (
         <NavigationContainer>
             <Tab.Navigator
@@ -115,3 +115,5 @@ const styles = StyleSheet.create({
         bottom: 0
     }
 });
+
+export default Navbar;
