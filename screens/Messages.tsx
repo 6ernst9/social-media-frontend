@@ -1,13 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import {StyleSheet, Text, View } from 'react-native';
 import React from "react";
-import Topbar from "../components/Topbar";
 
-export default function Home() {
+export default function Messages() {
     return (
         <View style={styles.container}>
-            <Topbar title={'UniHub'}/>
-            <Text>Home</Text>
+            <Text>Account</Text>
             <StatusBar style="auto" />
         </View>
     );

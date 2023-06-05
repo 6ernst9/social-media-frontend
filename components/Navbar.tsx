@@ -42,6 +42,7 @@ export default function Navbar() {
                     name={routes[0]}
                     component={Home}
                     options={{
+                        headerShown: false,
                         tabBarIcon: ({focused}) => (
                             focused? <Image source={HouseFocusedIcon} style={styles.smallerIcon}/>
                                     : <Image source={HouseIcon} style={styles.smallerIcon}/>
@@ -51,6 +52,7 @@ export default function Navbar() {
                     name={routes[1]}
                     component={Search}
                     options={{
+                        headerShown: false,
                         tabBarIcon: () => (
                              <Image source={SearchIcon} style={styles.smallerIcon}/>
                         )
@@ -59,6 +61,7 @@ export default function Navbar() {
                     name={routes[2]}
                     component={Publish}
                     options={{
+                        headerShown: false,
                         tabBarIcon: ({focused}) => (
                             focused? <Image source={PublishFocusedIcon} style={styles.standardIcon}/>
                                 : <Image source={PublishIcon} style={styles.standardIcon}/>
@@ -68,6 +71,7 @@ export default function Navbar() {
                     name={routes[3]}
                     component={Notifications}
                     options={{
+                        headerShown: false,
                         tabBarIcon: ({focused}) => (
                             focused? <Image source={NotificationsFocusedIcon} style={styles.smallerIcon}/>
                                 : <Image source={NotificationsIcon} style={styles.smallerIcon}/>
@@ -77,6 +81,7 @@ export default function Navbar() {
                     name={routes[4]}
                     component={Account}
                     options={{
+                        headerShown: false,
                         tabBarIcon: ({focused}) => (
                             focused? <Image source={AccountFocusedIcon} style={styles.standardIcon}/>
                                 : <Image source={AccountIcon} style={styles.standardIcon}/>
