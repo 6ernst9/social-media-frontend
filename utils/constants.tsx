@@ -1,0 +1,1 @@
+export const routes: string[] = ['Home', 'Search', 'Publish', 'Notifications', 'Account'];
