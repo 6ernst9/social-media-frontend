@@ -1,3 +1,13 @@
 export const routes: string[] = ['Home', 'Search', 'Publish', 'Notifications', 'Account'];
-
 export const title: string = 'UniHub';
+export const PRIMARY_DARK= '#fffc00';
+export const PRIMARY_LIGHT = '#7737ff';
+export const BACKGROUND_LIGHT = '#ffffff';
+export const LIGHT_GREY = '#e8e8e8';
+export const FONT_BOLD = 'CentraNo2-Bold.ttf';
+export const FONT_LIGHT = 'CentraNo2-Book.ttf';
+export const FONT_MEDIUM = 'CentraNo2-Medium.ttf';
+export const POST = 'POST';
+export const PUT = 'PUT';
+export const GET = 'GET';
+export const DELETE = 'DELETE';

@@ -1,13 +1,10 @@
 import React from 'react';
 import {StyleSheet, View, Text, Image} from 'react-native';
-import {title} from '../utils/constants';
+import {FONT_BOLD, title} from '../utils/constants';
 
 import MessageIcon from '../assets/icons/message.svg';
 import CameraIcon from '../assets/icons/camera.svg';
 
-interface Props {
-    title: string
-}
 const HomeTopbar: React.FC = () =>{
     return (
         <View style={styles.topBar}>
@@ -37,7 +34,6 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 22,
-        fontFamily: 'CentraNo2-Bold.ttf',
         fontWeight: 'bold',
         color: '#000',
     }
