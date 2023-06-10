@@ -3,15 +3,15 @@ import React from "react";
 import {FONT_LIGHT, PRIMARY_DARK} from "../utils/constants";
 
 interface HighlightProps {
-    photoUrl: string,
+    photo: Image,
     name: string
 }
 
-const Highlight: React.FC<HighlightProps> = ({ photoUrl, name }) =>{
+const Highlight: React.FC<HighlightProps> = ({ photo, name }) =>{
     return (
         <View style={styles.highlight}>
             <View style={styles.story}>
-                <Image source={photoUrl} style={styles.highlightPhoto}/>
+                <Image source={photo} style={styles.highlightPhoto}/>
             </View>
             <Text style={styles.highlightText}>{name}</Text>
         </View>

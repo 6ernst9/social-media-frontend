@@ -1,3 +1,5 @@
+import {Image} from "react-native";
+
 export interface User{
     id: number,
     name: string,
@@ -7,23 +9,24 @@ export interface User{
     description?: string,
     gender: string,
     joinDate: string,
-    profilePhotoUrl: string
+    profilePhoto: Image
 }
 
 export interface Post{
-    photosUrls: string[];
+    user: User;
+    photos: Image[];
     postTime: string;
-    location: string;
-    description: string;
+    location?: string;
+    description?: string;
     views: number;
-    likes: string[];
+    likes: User[];
     comments: Comment[];
 }
 
 export interface Comment{
-    user: string;
+    user: User;
     text: string;
-    likes: string[];
+    likes: User[];
     replies: Comment[];
     commTime: string;
 }
@@ -57,4 +60,9 @@ export interface ButtonProps{
     content: string,
     onClick: () => void;
     isPrincipal: boolean;
+}
+
+export interface TextProps{
+    text: string,
+    color: string
 }

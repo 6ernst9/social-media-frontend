@@ -12,7 +12,7 @@ const Highlights: React.FC = () => {
                 showsHorizontalScrollIndicator={false}>
                 {mockUsers.map((user, index) => {
                     return (
-                        <Highlight key={index} photoUrl={user.profilePhotoUrl} name={user.username}/>
+                        <Highlight key={index} photo={user.profilePhoto} name={user.username}/>
                     )
                 })}
             </ScrollView>
