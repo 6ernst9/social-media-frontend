@@ -90,7 +90,6 @@ const Navbar: React.FC = () => {
 
             </Tab.Navigator>
         </NavigationContainer>
-
         );
 }
 

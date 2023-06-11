@@ -1,21 +1,22 @@
 import React from "react";
-import {Comment, Post, User} from "../utils/types";
-import {Image, Pressable, View, Text, StyleSheet} from "react-native";
+import {Post} from "../utils/types";
+import {Image, Pressable, View, StyleSheet} from "react-native";
 
 import Heart from '../assets/icons/heart.svg';
 import Chat from '../assets/icons/chat.svg';
 import Send from '../assets/icons/send.svg';
 import Bookmark from '../assets/icons/bookmark.svg';
 import Clock from '../assets/icons/clock.svg';
-import {BACKGROUND_LIGHT, LIGHT_GREY, MEDIUM_GREY, PRIMARY_LIGHT} from "../utils/constants";
+import Dots from '../assets/icons/dots-vertical.svg';
+import {BACKGROUND_LIGHT, MEDIUM_GREY, PRIMARY_LIGHT} from "../utils/constants";
 import LText from "./LText";
+import BText from "./BText";
+import Line from "./Line";
 
 const PostComponent: React.FC<Post> = ({user,
                                   photos,
-                                  postTime,
                                   location,
                                   description,
-                                  views,
                                   likes,
                                   comments}) =>{
     const visitProfile = () =>{
@@ -30,13 +31,15 @@ const PostComponent: React.FC<Post> = ({user,
                        <Image source={user.profilePhoto} style={styles.profilePhoto}/>
                    </Pressable>
                    <View>
-                       <Pressable>
-                           <Text style={styles.username}>{user.username}</Text>
+                       <Pressable onPress={visitProfile}>
+                           <BText text={user.username}/>
                        </Pressable>
-                       {location && <Text style={styles.location}>{location}</Text>}
+                       {location && <LText text={location}/>}
                    </View>
                </View>
+                <Image source={Dots} style={styles.icon}/>
             </View>
+            <Line/>
             <View style={styles.imageContainer}>
                 <Image source={photos[0]} style={styles.postImage}/>
             </View>
@@ -51,29 +54,29 @@ const PostComponent: React.FC<Post> = ({user,
                 </View>
                 <View style={styles.actions}>
                     <View style={styles.likes}>
-                        {likes.slice(0, 4).map((user, index) => {
+                        {likes.slice(0, 4).map((user) => {
                              return(
                                 <Image key={user.id} source={user.profilePhoto} style={styles.likeImage}/>
                             )
                         })}
                     </View>
                     <View style={styles.likes}>
-                        <Text style={styles.location}>liked </Text>
-                        <Text style={styles.descriptionBold}>{likes[0].username} </Text>
-                        <Text style={styles.location}>and </Text>
-                        <Text style={styles.descriptionBold}>{likes.length-1} more</Text>
+                        <LText text={'liked '}/>
+                        <BText text={likes[0].username}/>
+                        <LText text={' and '}/>
+                        <BText text={likes.length-1 + ' more'}/>
                     </View>
                 </View>
-                <View style={styles.description}>
-                    <Text style={styles.username}>{user.username}</Text>
-                    <Text style={styles.location}>{description}</Text>
-                </View>
-                <View style={styles.line}/>
+                {description && <View style={styles.description}>
+                    <BText text={user.username}/>
+                    <LText text={description}/>
+                </View>}
+                {comments.length > 0 && <Line padding={10}/>}
                 {comments.length > 0 &&
                     <View style={styles.bottomContainer}>
-                        <View style={styles.likes}>
-                            <Text style={styles.comments}>View all comments</Text>
-                            <Text style={styles.commentsNumbered}>({comments.length})</Text>
+                        <View style={styles.description}>
+                            <LText text={'View all comments'} color={MEDIUM_GREY}/>
+                            <BText text={'(' + comments.length.toString() + ')'} color={PRIMARY_LIGHT}/>
                         </View>
                         <View style={styles.description}>
                             <Image source={Clock} style={styles.iconSmall}/>
@@ -97,22 +100,20 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         padding: 10
     },
     topBarLeft:{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        alignItems: 'center'
     },
     profilePhoto:{
         borderRadius: 100,
         width: 40,
         height: 40,
         marginRight: 10
-    },
-    username:{
-        fontSize: 14,
-        fontWeight: 'bold'
     },
     imageContainer:{
       display: 'flex',
@@ -151,10 +152,6 @@ const styles = StyleSheet.create({
         height: 20,
         tintColor: MEDIUM_GREY
     },
-    descriptionBold:{
-        fontSize: 13,
-        fontWeight: 'bold'
-    },
     likes:{
         display: 'flex',
         flexDirection: 'row',
@@ -172,27 +169,12 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 7.5
-    },
-    line:{
-        width: '100%',
-        height: 1,
-        backgroundColor: LIGHT_GREY,
-        paddingHorizontal: 10
+        gap: 5
     },
     bottomContainer:{
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-    },
-    comments:{
-        fontSize: 14,
-        marginRight: 5,
-    },
-    commentsNumbered:{
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: PRIMARY_LIGHT
     }
 })
 

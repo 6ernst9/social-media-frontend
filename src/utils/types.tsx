@@ -64,5 +64,5 @@ export interface ButtonProps{
 
 export interface TextProps{
     text: string,
-    color: string
+    color?: string
 }

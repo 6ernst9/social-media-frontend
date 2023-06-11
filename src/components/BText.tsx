@@ -4,7 +4,7 @@ import {TextProps} from "../utils/types";
 
 const BText: React.FC<TextProps> = ({text, color}) =>{
     return(
-        <Text style={{ fontSize: 14, fontWeight: 'bold', color: color}}>{text}</Text>
+        <Text style={{ fontSize: 13, fontWeight: 'bold', color: color}}>{text}</Text>
     )
 }
 
