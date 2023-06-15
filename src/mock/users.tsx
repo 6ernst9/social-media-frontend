@@ -12,6 +12,7 @@ export const mockUsers: User[] = [
         name: 'Bianca Haiduc',
         username: 'biahaiduc',
         password: 'pass123',
+        description: 'UI/UX  Designer at @Ecommercex',
         dateOfBirth: '23/8/2002',
         joinDate: '24/10/2018',
         profilePhoto: Profile1,

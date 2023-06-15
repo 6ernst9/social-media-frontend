@@ -3,13 +3,10 @@ import React from "react";
 import {ButtonProps} from "../utils/types";
 import {BACKGROUND_LIGHT, FONT_LIGHT, LIGHT_GREY} from "../utils/constants";
 
-let paddingCoefficient = 1;
-
 const SecondaryButton: React.FC<ButtonProps> = ({content, onClick, isPrincipal}) => {
-    if(isPrincipal) paddingCoefficient =2;
     return(
         <Pressable onPress={onClick}>
-            <View style={styles.buttonContainer}>
+            <View style={isPrincipal? styles.buttonContainer : styles.buttonContainer2}>
                 <Text style={styles.buttonText}>{content}</Text>
             </View>
         </Pressable>
@@ -20,8 +17,21 @@ const styles = StyleSheet.create({
     buttonContainer: {
         position: 'relative',
         backgroundColor: BACKGROUND_LIGHT,
-        paddingHorizontal: paddingCoefficient * 20,
-        paddingVertical: paddingCoefficient * 10,
+        paddingHorizontal: 40,
+        paddingVertical: 20,
+        borderRadius: 100,
+        borderWidth: 2,
+        borderColor: LIGHT_GREY,
+        boxSizing: 'border-box',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    buttonContainer2: {
+        position: 'relative',
+        backgroundColor: BACKGROUND_LIGHT,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
         borderRadius: 100,
         borderWidth: 2,
         borderColor: LIGHT_GREY,

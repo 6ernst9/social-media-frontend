@@ -58,11 +58,16 @@ export interface Response{
 
 export interface ButtonProps{
     content: string,
-    onClick: () => void;
+    onClick?: () => void;
     isPrincipal: boolean;
 }
 
 export interface TextProps{
     text: string,
     color?: string
+}
+
+export interface Highlight{
+    name: string;
+    photo: Image;
 }

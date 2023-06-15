@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         height: 30
     },
     tabBar: {
-        height: 60,
+        height: 50,
         position: 'absolute',
         bottom: 0
     }

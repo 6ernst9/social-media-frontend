@@ -55,7 +55,7 @@ const PostComponent: React.FC<Post> = ({user,
                 <View style={styles.actions}>
                     <View style={styles.likes}>
                         {likes.slice(0, 4).map((user) => {
-                             return(
+                            return(
                                 <Image key={user.id} source={user.profilePhoto} style={styles.likeImage}/>
                             )
                         })}

@@ -1,23 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, View} from 'react-native';
 import React from "react";
-import HomeTopbar from "../components/HomeTopbar";
-import Highlights from "../components/Highlights";
+import Stories from "../components/Stories";
 import PostComponent from "../components/Post";
-import {mockUsers} from "../mock/users";
 
-import Profile1 from '../assets/img/profile1.jpg';
 import {mockPosts} from "../mock/posts";
+import Topbar from "../components/Topbar";
+
+import MessageIcon from '../assets/icons/message.svg';
+import CameraIcon from '../assets/icons/camera.svg';
+import {title} from "../utils/constants";
 
 const Home: React.FC = () => {
     return (
-        <View style={styles.container}>
-            <ScrollView style={styles.scrollView}>
-                <HomeTopbar />
-                <Highlights />
-                <PostComponent {...mockPosts[0]} />
-            </ScrollView>
-        </View>
+            <View style={styles.container}>
+                <Topbar firstIcon={CameraIcon} lastIcon={MessageIcon} title={title}/>
+                <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+                    <Stories />
+                    <PostComponent {...mockPosts[0]} />
+                    <PostComponent {...mockPosts[0]} />
+                </ScrollView>
+            </View>
     );
 }
 
@@ -31,7 +33,10 @@ const styles = StyleSheet.create({
     scrollView:{
         width: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        position: 'relative',
+        flexDirection: 'column',
+        paddingVertical: 51,
+        gap: 10
     }
 });
 
