@@ -1,18 +1,11 @@
-import {StyleSheet } from 'react-native';
 import React from "react";
 import Navbar from "./src/components/Navbar";
+import {NavigationContainer} from "@react-navigation/native";
 
 export default function App() {
   return (
-    <Navbar/>
+      <NavigationContainer>
+          <Navbar/>
+      </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

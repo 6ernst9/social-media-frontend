@@ -1,5 +1,5 @@
 import React from "react";
-import {Dimensions, FlatList, Image, View, StyleSheet} from "react-native";
+import {Dimensions, FlatList, Image, View, StyleSheet, Pressable} from "react-native";
 import Line from "./Line";
 
 const { width } = Dimensions.get('window');
@@ -7,17 +7,20 @@ const itemSize = (width -2) / 3;
 
 interface GridViewProps {
     photos: Image[];
+    onClick?: () => void;
 }
 
 interface PhotoProps {
     item: Image;
 }
 
-const GridView: React.FC<GridViewProps> = ({photos}) =>{
+const GridView: React.FC<GridViewProps> = ({photos, onClick}) =>{
     const renderPhoto: React.FC<PhotoProps> = ({item}) => {
         return (
-            <View style={styles.itemContainer}>
-                <Image source={item} style={styles.photo} />
+            <View>
+                <Pressable onPress={onClick} style={styles.itemContainer}>
+                    <Image source={item} style={styles.photo} />
+                </Pressable>
             </View>
         );
     };

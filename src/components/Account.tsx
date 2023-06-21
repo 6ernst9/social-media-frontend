@@ -1,43 +1,56 @@
-import {Image, ScrollView, StyleSheet, Text, View, Dimensions} from 'react-native';
+import {Image, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from "react";
 import Topbar from "../components/Topbar";
 
 import Plus from '../assets/icons/plus.svg';
 import Menu from '../assets/icons/menu.svg';
+import Arrow from '../assets/icons/arrow-left.svg'
 import {mockUsers} from "../mock/users";
 import LText from "../components/LText";
 import PrimaryButton from "../components/PrimaryButton";
 import SecondaryButton from "../components/SecondaryButton";
 import Highlights from "../components/Highlights";
 import GridView from "../components/GridView";
-import Line from "../components/Line";
+import {User} from "../utils/types";
+import {myUser} from "../utils/constants";
+import { useNavigation } from '@react-navigation/native';
 
-export default function Account() {
+interface AccountProps{
+    user: User;
+}
+
+const Account: React.FC<AccountProps> = ({user}) => {
+    const navigation = useNavigation();
+
+    const seePosts = () =>{
+        navigation.navigate('Posts');
+    }
+
     return (
         <View style={styles.container}>
-            <Topbar firstIcon={Plus} lastIcon={Menu} title={mockUsers[0].username}/>
+            <Topbar firstIcon={user === myUser ? Plus: Arrow} lastIcon={Menu} title={user.username}/>
             <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.header}>
                     <View style={styles.numbersContainer}>
                         <Text style={styles.numbers}>321k</Text>
                         <LText text={'followers'}/>
                     </View>
-                    <Image source={mockUsers[0].profilePhoto} style={styles.profilePhoto}/>
+                    <Image source={user.profilePhoto} style={styles.profilePhoto}/>
                     <View style={styles.numbersContainer}>
                         <Text style={styles.numbers}>125</Text>
                         <LText text={'following'}/>
                     </View>
                 </View>
                 <View style={styles.detailsContainer}>
-                    <Text style={styles.name}>{mockUsers[0].name}</Text>
-                    {mockUsers[0].description && <LText text={mockUsers[0].description}/>}
+                    <Text style={styles.name}>{user.name}</Text>
+                    {user.description && <LText text={user.description}/>}
                 </View>
                 <View style={styles.buttonsContainer}>
                     <PrimaryButton content={' Follow '} isPrincipal={true}/>
                     <SecondaryButton content={'Message'} isPrincipal={true}/>
                 </View>
                 <Highlights isMine={true}/>
-                <GridView photos={mockUsers.map((user) => user.profilePhoto)}/>
+                <GridView photos={mockUsers.map((user) => user.profilePhoto)} onClick={seePosts}/>
             </ScrollView>
         </View>
     );
@@ -101,4 +114,6 @@ const styles = StyleSheet.create({
         gap: 5
     }
 });
+
+export default Account;
 

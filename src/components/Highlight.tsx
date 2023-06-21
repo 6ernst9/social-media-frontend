@@ -1,6 +1,6 @@
 import {StyleSheet, Image, Text, View} from "react-native";
 import React from "react";
-import {BACKGROUND_LIGHT, FONT_LIGHT, MEDIUM_GREY, PRIMARY_DARK, PRIMARY_LIGHT} from "../utils/constants";
+import {BACKGROUND_LIGHT, MEDIUM_GREY, PRIMARY_LIGHT} from "../utils/constants";
 import Add from '../assets/icons/plusFillStory.svg';
 
 interface HighlightProps {

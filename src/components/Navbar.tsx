@@ -4,7 +4,7 @@ import React from "react";
 import Home from "../screens/Home";
 import Search from "../screens/Search";
 import Publish from "../screens/Publish";
-import Account from "../screens/Account";
+import MyAccount from "../screens/MyAccount";
 import Notifications from "../screens/Notifications";
 import {NavigationContainer} from "@react-navigation/native";
 
@@ -25,12 +25,13 @@ import AccountIcon from '../assets/icons/user.svg';
 import {routes} from '../utils/constants';
 
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import HomeTree from "../screens/HomeTree";
+import AccountTree from "../screens/AccountTree";
 
 const Tab = createBottomTabNavigator();
 
 const Navbar: React.FC = () => {
     return (
-        <NavigationContainer>
             <Tab.Navigator
                 initialRouteName={routes[0]}
                 screenOptions={{
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
                 }}>
                 <Tab.Screen
                     name={routes[0]}
-                    component={Home}
+                    component={HomeTree}
                     options={{
                         headerShown: false,
                         tabBarIcon: ({focused}) => (
@@ -79,7 +80,7 @@ const Navbar: React.FC = () => {
                     }}/>
                 <Tab.Screen
                     name={routes[4]}
-                    component={Account}
+                    component={AccountTree}
                     options={{
                         headerShown: false,
                         tabBarIcon: ({focused}) => (
@@ -89,7 +90,6 @@ const Navbar: React.FC = () => {
                     }}/>
 
             </Tab.Navigator>
-        </NavigationContainer>
         );
 }
 

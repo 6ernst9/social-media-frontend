@@ -7,7 +7,7 @@ import Line from "./Line";
 interface TopbarProps{
     firstIcon: Image,
     title?: string,
-    lastIcon: Image
+    lastIcon?: Image
 }
 
 const Topbar: React.FC<TopbarProps> = ({firstIcon, title, lastIcon}) =>{

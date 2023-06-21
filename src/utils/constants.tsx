@@ -1,3 +1,5 @@
+import {mockUsers} from "../mock/users";
+
 export const routes: string[] = ['Home', 'Search', 'Publish', 'Notifications', 'Account'];
 export const title: string = 'yolo';
 export const PRIMARY_DARK= '#fffc00';
@@ -13,3 +15,6 @@ export const POST = 'POST';
 export const PUT = 'PUT';
 export const GET = 'GET';
 export const DELETE = 'DELETE';
+
+//TODO change global user
+export const myUser = mockUsers[0];

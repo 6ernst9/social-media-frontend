@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import {StyleSheet, Text, View } from 'react-native';
 import React from "react";
 
-export default function Messages() {
+const Messages: React.FC = () => {
     return (
         <View style={styles.container}>
             <Text>Account</Text>
@@ -19,3 +19,5 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
 });
+
+export default Messages;
