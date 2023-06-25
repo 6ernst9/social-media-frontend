@@ -4,8 +4,8 @@ import Feeds from "../screens/Feeds";
 import Account from "../screens/Account";
 import {mockUsers} from "../mock/users";
 import Story from "../screens/Story";
-import Messages from "../screens/Messages";
 import Chat from "../screens/Chat";
+import Messages from "../screens/Messages";
 
 const Stack = createNativeStackNavigator();
 
