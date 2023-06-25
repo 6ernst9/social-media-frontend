@@ -10,7 +10,7 @@ import MessageIcon from '../assets/icons/message.svg';
 import CameraIcon from '../assets/icons/camera.svg';
 import {title} from "../utils/constants";
 
-const Home: React.FC = () => {
+const Feeds: React.FC = () => {
     return (
             <View style={styles.container}>
                 <Topbar firstIcon={CameraIcon} lastIcon={MessageIcon} title={title}/>
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Home;
+export default Feeds;

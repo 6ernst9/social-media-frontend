@@ -1,21 +1,17 @@
+import {ScrollView, StyleSheet, View} from 'react-native';
 import React from "react";
-import {Post} from "../utils/types";
-import {ScrollView, StyleSheet, View} from "react-native";
-import PostComponent from "../components/Post";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
+import {Highlight} from "../utils/types";
 
-type PostsProps = {
-    posts: Post[];
+type StoryProps = {
+    story: Highlight;
+    allStories: Highlight[];
 }
 
-const Posts: React.FC<NativeStackScreenProps<PostsProps>> = ({route}) => {
-    const posts = route.params as Post[];
-    return(
+const Story: React.FC<NativeStackScreenProps<StoryProps>> = ({route}) => {
+    return (
         <View style={styles.container}>
             <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-                {posts.map((post) => {
-                    return <PostComponent {...post}/>
-                })}
             </ScrollView>
         </View>
     );
@@ -38,4 +34,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Posts;
+export default Story;
