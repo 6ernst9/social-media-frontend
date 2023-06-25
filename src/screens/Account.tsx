@@ -11,15 +11,17 @@ import PrimaryButton from "../components/PrimaryButton";
 import SecondaryButton from "../components/SecondaryButton";
 import Highlights from "../components/Highlights";
 import GridView from "../components/GridView";
-import {User} from "../utils/types";
 import {myUser} from "../utils/constants";
 import { useNavigation } from '@react-navigation/native';
+import {User} from "../utils/types";
+import {NativeStackScreenProps} from "@react-navigation/native-stack";
 
-interface AccountProps{
+type AccountProps = {
     user: User;
 }
 
-const Account: React.FC<AccountProps> = ({user}) => {
+const Account: React.FC<NativeStackScreenProps<AccountProps>> = ({route}) => {
+    const user = route.params as User;
     const navigation = useNavigation();
 
     const seePosts = () =>{

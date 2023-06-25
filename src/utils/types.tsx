@@ -1,6 +1,6 @@
 import {Image} from "react-native";
 
-export interface User{
+export type User ={
     id: number,
     name: string,
     username: string,
@@ -12,7 +12,7 @@ export interface User{
     profilePhoto: Image
 }
 
-export interface Post{
+export type Post = {
     user: User;
     photos: Image[];
     postTime: string;
@@ -23,7 +23,7 @@ export interface Post{
     comments: Comment[];
 }
 
-export interface Comment{
+export type Comment = {
     user: User;
     text: string;
     likes: User[];
@@ -31,24 +31,24 @@ export interface Comment{
     commTime: string;
 }
 
-export interface HttpResponse<T>{
+export type HttpResponse<T> = {
     status: number;
     bodyText: string;
     body?: T;
     error?: string;
 }
 
-export interface HttpRequestOptions{
+export type HttpRequestOptions = {
     method: string,
     body?: string,
     headers?: HttpHeader;
 }
 
-export interface HttpHeader{
+export type HttpHeader = {
    'Content-Type'?: string;
 }
 
-export interface Response{
+export type Response = {
     status: number;
     text: string;
     headers: { [key: string]: string};
@@ -56,18 +56,25 @@ export interface Response{
     error?: string;
 }
 
-export interface ButtonProps{
+export type ButtonProps = {
     content: string,
     onClick?: () => void;
     isPrincipal: boolean;
 }
 
-export interface TextProps{
+export type TextProps = {
     text: string,
     color?: string
 }
 
-export interface Highlight{
-    name: string;
+export type Highlight = {
+    user: User;
     photo: Image;
+}
+
+export type Message = {
+    sender: User;
+    receiver: User;
+    content: string;
+    time: string;
 }

@@ -1,21 +1,24 @@
+import {ScrollView, StyleSheet, View} from 'react-native';
 import React from "react";
-import {Post} from "../utils/types";
-import {ScrollView, StyleSheet, View} from "react-native";
-import PostComponent from "../components/Post";
+
+import Topbar from "../components/Topbar";
+
+import MessageIcon from '../assets/icons/message.svg';
+import CameraIcon from '../assets/icons/camera.svg';
+import {title} from "../utils/constants";
+import {User} from "../utils/types";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
 
-type PostsProps = {
-    posts: Post[];
+type FollowProps = {
+    user: User;
 }
 
-const Posts: React.FC<NativeStackScreenProps<PostsProps>> = ({route}) => {
-    const posts = route.params as Post[];
-    return(
+const Follow: React.FC<NativeStackScreenProps<FollowProps>> = ({route}) => {
+    const user = route.params as User;
+    return (
         <View style={styles.container}>
+            <Topbar firstIcon={CameraIcon} lastIcon={MessageIcon} title={title}/>
             <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-                {posts.map((post) => {
-                    return <PostComponent {...post}/>
-                })}
             </ScrollView>
         </View>
     );
@@ -38,4 +41,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Posts;
+export default Follow;

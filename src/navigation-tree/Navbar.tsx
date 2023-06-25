@@ -1,12 +1,9 @@
 import {StyleSheet, Image} from 'react-native';
 import React from "react";
 
-import Home from "../screens/Home";
-import Search from "../screens/Search";
-import Publish from "../screens/Publish";
-import MyAccount from "../screens/MyAccount";
-import Notifications from "../screens/Notifications";
-import {NavigationContainer} from "@react-navigation/native";
+import Search from "./Search";
+import Publish from "./Publish";
+import Notifications from "./Notifications";
 
 import HouseFocusedIcon from '../assets/icons/houseFill.svg';
 import HouseIcon from '../assets/icons/house.svg';
@@ -25,8 +22,8 @@ import AccountIcon from '../assets/icons/user.svg';
 import {routes} from '../utils/constants';
 
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import HomeTree from "../screens/HomeTree";
-import AccountTree from "../screens/AccountTree";
+import Home from "./Home";
+import MyAccount from "./MyAccount";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +38,7 @@ const Navbar: React.FC = () => {
                 }}>
                 <Tab.Screen
                     name={routes[0]}
-                    component={HomeTree}
+                    component={Home}
                     options={{
                         headerShown: false,
                         tabBarIcon: ({focused}) => (
@@ -80,7 +77,7 @@ const Navbar: React.FC = () => {
                     }}/>
                 <Tab.Screen
                     name={routes[4]}
-                    component={AccountTree}
+                    component={MyAccount}
                     options={{
                         headerShown: false,
                         tabBarIcon: ({focused}) => (
