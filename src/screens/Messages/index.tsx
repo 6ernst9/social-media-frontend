@@ -1,13 +1,13 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
 import React from "react";
 
-import Topbar from "../components/Topbar";
+import Topbar from "../../components/Topbar";
 
-import MessageIcon from '../assets/icons/message.svg';
-import CameraIcon from '../assets/icons/camera.svg';
-import {title} from "../utils/constants";
+import MessageIcon from '../../assets/icons/message.svg';
+import CameraIcon from '../../assets/icons/camera.svg';
+import {title} from "../../utils/constants";
 
-const Messages: React.FC = () => {
+const Index: React.FC = () => {
     return (
         <View style={styles.container}>
             <Topbar firstIcon={CameraIcon} lastIcon={MessageIcon} title={title}/>
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Messages;
+export default Index;

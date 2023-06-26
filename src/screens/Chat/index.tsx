@@ -1,12 +1,12 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
 import React from "react";
 
-import Topbar from "../components/Topbar";
+import Topbar from "../../components/Topbar";
 
-import MessageIcon from '../assets/icons/message.svg';
-import CameraIcon from '../assets/icons/camera.svg';
-import {title} from "../utils/constants";
-import {Message} from "../utils/types";
+import MessageIcon from '../../assets/icons/message.svg';
+import CameraIcon from '../../assets/icons/camera.svg';
+import {title} from "../../utils/constants";
+import {Message} from "../../utils/types";
 import {NativeStackScreenProps} from "@react-navigation/native-stack";
 
 type ChatProps = {

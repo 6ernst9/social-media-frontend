@@ -1,20 +1,13 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
 import React from "react";
 
-import Topbar from "../components/Topbar";
+import Topbar from "../../components/Topbar";
 
-import MessageIcon from '../assets/icons/message.svg';
-import CameraIcon from '../assets/icons/camera.svg';
-import {title} from "../utils/constants";
-import {User} from "../utils/types";
-import {NativeStackScreenProps} from "@react-navigation/native-stack";
+import MessageIcon from '../../assets/icons/message.svg';
+import CameraIcon from '../../assets/icons/camera.svg';
+import {title} from "../../utils/constants";
 
-type FollowProps = {
-    user: User;
-}
-
-const Follow: React.FC<NativeStackScreenProps<FollowProps>> = ({route}) => {
-    const user = route.params as User;
+const Settings: React.FC = () => {
     return (
         <View style={styles.container}>
             <Topbar firstIcon={CameraIcon} lastIcon={MessageIcon} title={title}/>
@@ -41,4 +34,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Follow;
+export default Settings;

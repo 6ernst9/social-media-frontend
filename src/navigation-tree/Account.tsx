@@ -1,21 +1,21 @@
 import React from "react";
 import Posts from "../screens/Posts";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import Account from "../screens/Account";
+import Profile from "../screens/Profile";
 import {mockUsers} from "../mock/users";
 import {mockPosts} from "../mock/posts";
 import Settings from "../screens/Settings";
 import Follow from "../screens/Follow";
-import Story from "../screens/Story";
+import Index from "../screens/Story";
 import Chat from "../screens/Chat";
 
 const Stack = createNativeStackNavigator();
 
-const MyAccount: React.FC = () =>{
+const Account: React.FC = () =>{
     return(
         <Stack.Navigator>
             <Stack.Screen
-                name={'Account'}
+                name={'Profile'}
                 component={Account}
                 initialParams={{user: mockUsers[0]}}
                 options={{ headerShown: false }}/>
@@ -33,8 +33,8 @@ const MyAccount: React.FC = () =>{
                 component={Follow}
                 options={{ headerShown: false }}/>
             <Stack.Screen
-                name={'Story'}
-                component={Story}
+                name={'Index'}
+                component={Index}
                 ///TODO add params
                 options={{ headerShown: false }}/>
             <Stack.Screen
@@ -46,4 +46,4 @@ const MyAccount: React.FC = () =>{
     )
 }
 
-export default MyAccount;
+export default Account;

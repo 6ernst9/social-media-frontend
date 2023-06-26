@@ -1,4 +1,5 @@
 import {Image} from "react-native";
+import React from "react";
 
 export type User ={
     id: number,
@@ -77,4 +78,9 @@ export type Message = {
     receiver: User;
     content: string;
     time: string;
+}
+
+export type ScreenFC = {
+    component: React.FC;
+    effects: () => void;
 }

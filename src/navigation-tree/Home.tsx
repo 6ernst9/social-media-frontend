@@ -1,11 +1,11 @@
 import React from "react";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Feeds from "../screens/Feeds";
-import Account from "../screens/Account";
+import Profile from "../screens/Profile";
 import {mockUsers} from "../mock/users";
-import Story from "../screens/Story";
+import Index from "../screens/Story";
 import Chat from "../screens/Chat";
-import Messages from "../screens/Messages";
+import Index from "../screens/Messages";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,18 +17,18 @@ const Home: React.FC = () => {
                 component={Feeds}
                 options={{ headerShown: false }}/>
             <Stack.Screen
-                name={'Account'}
-                component={Account}
+                name={'Profile'}
+                component={Profile}
                 initialParams={{user: mockUsers[0]}}
                 options={{ headerShown: false }}/>
             <Stack.Screen
-                name={'Story'}
-                component={Story}
+                name={'Index'}
+                component={Index}
                 //TODO add params
                 options={{ headerShown: false }}/>
             <Stack.Screen
-                name={'Messages'}
-                component={Messages}
+                name={'Index'}
+                component={Index}
                 options={{ headerShown: false }}/>
             <Stack.Screen
                 name={'Chat'}

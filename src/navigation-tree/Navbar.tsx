@@ -23,7 +23,7 @@ import {routes} from '../utils/constants';
 
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import Home from "./Home";
-import MyAccount from "./MyAccount";
+import Account from "./Account";
 
 const Tab = createBottomTabNavigator();
 
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
                     }}/>
                 <Tab.Screen
                     name={routes[4]}
-                    component={MyAccount}
+                    component={Account}
                     options={{
                         headerShown: false,
                         tabBarIcon: ({focused}) => (

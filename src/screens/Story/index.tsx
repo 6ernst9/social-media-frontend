@@ -1,16 +1,16 @@
 import {ScrollView, StyleSheet, View} from 'react-native';
 import React from "react";
+import {NativeStackScreenProps} from "@react-navigation/native-stack";
+import {Highlight} from "../../utils/types";
 
-import Topbar from "../components/Topbar";
+type StoryProps = {
+    story: Highlight;
+    allStories: Highlight[];
+}
 
-import MessageIcon from '../assets/icons/message.svg';
-import CameraIcon from '../assets/icons/camera.svg';
-import {title} from "../utils/constants";
-
-const Settings: React.FC = () => {
+const Index: React.FC<NativeStackScreenProps<StoryProps>> = ({route}) => {
     return (
         <View style={styles.container}>
-            <Topbar firstIcon={CameraIcon} lastIcon={MessageIcon} title={title}/>
             <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
             </ScrollView>
         </View>
@@ -34,4 +34,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Settings;
+export default Index;
